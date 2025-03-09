@@ -9,14 +9,16 @@ test('Locators', async ({page}) => {
 
     // fill the user login form
 
-    await page.fill('#loginusername', 'jawad')
+    await page.fill('#loginusername', 'jawad123')
     await page.fill('#loginpassword', 'jawad123')
 
-    await page.click("//button[normalize-space()='Log in']")
+    // await page.waitForSelector('#logInModal', { state: 'visible' });
+    await page.click('//button[normalize-space()="Log in"]');
 
-    // const logoutLink = await page.locator("id=logout2")
 
-    // await expect(logoutLink).toBeVisible({ timeout: 100000} );
+    const logoutLink = await page.locator("id=logout2")
+
+    await expect(logoutLink).toBeVisible({ timeout: 100000} );
 
     await page.close()
 })
