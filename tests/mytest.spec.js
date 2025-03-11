@@ -6,6 +6,6 @@ test('test', async ({ page }) => {
   await page.locator('#loginusername').click();
   await page.locator('#loginusername').fill('jawad123');
   await page.locator('#loginusername').press('Tab');
-  await page.locator('#loginpassword').fill('jawad123');
+  await page.locator('#loginpassword').fill('jawad123'); 
   await page.getByRole('button', { name: 'Log in' }).click();
 });
